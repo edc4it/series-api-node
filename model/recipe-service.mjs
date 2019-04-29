@@ -21,10 +21,9 @@ const sortedOverview  = overview.sort((r1, r2) => r2.year - r1.year);
 
 export default {
 
-    all(sortByDate, titlePattern, f) {
-        const data =  sortByDate === true ?  sortedOverview : overview;
-        const filteredData = data.filter(r => (titlePattern===undefined || titlePattern==="") || (r.title.toLowerCase().indexOf(titlePattern.toLowerCase()) > -1))
-        f(undefined,filteredData);
+    all(sortByYear, titlePattern) {
+        const data =  sortByYear === true ?  sortedOverview : overview;
+        return data.filter(r => (titlePattern===undefined || titlePattern==="") || (r.title.toLowerCase().contains(titlePattern.toLowerCase())));
     },
 
     findById(id) {

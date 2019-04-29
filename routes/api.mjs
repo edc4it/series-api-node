@@ -4,9 +4,8 @@ const router = express.Router();
 
 router.route('/series')
     .get((req, res) => {
-        series.all(req.query.sort==="datePublished", req.query.titlePattern, function (error, recipes) {
-            res.json(recipes)
-        });
+        const rs = series.all(req.query.sort==="year", req.query.titlePattern);
+        res.json(rs);
     });
 
 router.route('/series/:id')
