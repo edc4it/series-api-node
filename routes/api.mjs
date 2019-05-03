@@ -1,5 +1,5 @@
 import express from 'express';
-import series from '../model/recipe-service.mjs';
+import series from '../model/series-service.mjs';
 const router = express.Router();
 
 router.route('/series')
